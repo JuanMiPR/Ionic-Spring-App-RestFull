@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Actualize a un cliente
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div id="beforeUpdate">
+    <ion-grid>
+      <ion-row style="margin: 10px;">
+        <ion-col size="3" style="text-align:right;">
+          <h5>Dni del cliente</h5>
+        </ion-col>
+        <ion-col style="text-align:right;">
+          <ion-item>
+            <ion-label position="stacked">DNI <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input required type="text" [(ngModel)]="dniTextValue" name="dni"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="1"></ion-col>
+      </ion-row>
+      <ion-row style="margin: 10px;">
+        <ion-col size="1">
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="onSubmit()" color="primary" expand="block">Mostrar los datos</ion-button>
+        </ion-col>
+        <ion-col size="1"></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div style="display: none;" id="updateInfo">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title style="font-weight: bold;">Datos del cliente a actualizar</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <p>Dni del Cliente :{{dniText}} </p>
+        <p>Nombre del cliente :{{nombreText}} </p>
+        <p> Deuda del cliente : {{deudaText}}</p>
+      </ion-card-content>
+      <ion-card-content>
+        <p>Nuevo dni del Cliente : </p>
+        <ion-item>
+            <ion-label position="stacked">DNI <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input required type="text"  [(ngModel)]="nuevoDniTextValue" name="dni" ></ion-input>
+          </ion-item>
+        <p>Nuevo nombre del cliente :</p>
+        <ion-item>
+          <ion-label position="stacked">Nombre<ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-input required type="text" [(ngModel)]="nuevoNombreTextValue" name="nombre"></ion-input>
+        </ion-item>
+        <p>Nueva deuda del cliente :</p>
+        <ion-item>
+            <ion-label position="stacked">Deuda <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input required type="number"   [(ngModel)]="nuevaDeudaTextValue" name="deuda"></ion-input>
+          </ion-item>
+      </ion-card-content>
+      <ion-button (click)="update()" color="danger" expand="block">Actualizar</ion-button>
+      <ion-button (click)="cancel()" color="primary" expand="block">Cancelar</ion-button>
+    </ion-card>
+  </div>
+
+</ion-content>

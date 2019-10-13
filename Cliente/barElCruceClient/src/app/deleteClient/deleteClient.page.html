@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Elimine a un cliente
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div id ="beforeDelete">
+    <ion-grid>
+      <ion-row style="margin: 10px;">
+        <ion-col size="3" style="text-align:right;">
+          <h5>Dni del cliente</h5>
+        </ion-col>
+        <ion-col style="text-align:right;">
+          <ion-item>
+            <ion-label position="stacked">DNI <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input required type="text" [(ngModel)]="dniTextValue" name="dni"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="1"></ion-col>
+      </ion-row>
+      <ion-row style="margin: 10px;">
+          <ion-col size="1">
+          </ion-col>
+          <ion-col>
+              <ion-button (click)="onSubmit()" color="primary" expand="block">Mostrar los datos</ion-button>
+          </ion-col>
+          <ion-col size="1"></ion-col>
+        </ion-row>
+    </ion-grid>
+  </div>
+  <div style="display: none;" id = "deleteInfo">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title style="font-weight: bold;">Datos del cliente a eliminar</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+          <p>Dni del Cliente :{{dniText}} </p>
+          <p>Nombre del cliente :{{nombreText}} </p>
+          <p> Deuda del cliente : {{deudaText}}</p>
+      </ion-card-content>
+      <ion-button (click)="delete()" color="danger" expand="block">Eliminar</ion-button>
+      <ion-button (click)="cancel()" color="primary" expand="block">Cancelar</ion-button>
+    </ion-card>
+  </div>
+
+</ion-content>

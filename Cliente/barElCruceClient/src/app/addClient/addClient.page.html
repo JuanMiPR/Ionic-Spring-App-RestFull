@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Añadir un cliente
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+    <ion-grid>
+      <ion-row style="margin: 10px;">
+        <ion-col size="2"></ion-col>
+        <ion-col>
+          <h4 style="font-weight: bold;">Añada un nuevo cliente</h4>
+        </ion-col>
+        <ion-col size="1"></ion-col>
+      </ion-row>
+      <ion-row style="margin: 10px;">
+        <ion-col size="3" style="text-align:right;">
+          <h5>Dni del cliente</h5>
+        </ion-col>
+        <ion-col style="text-align:right;">
+          <ion-item>
+            <ion-label position="stacked">DNI <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input required type="text"  [(ngModel)]="dniTextValue" name="dni" ></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="1"></ion-col>
+      </ion-row>
+      <ion-row style="margin: 10px;">
+        <ion-col size="3" style="text-align:right;">
+          <h5>Nombre cliente</h5>
+        </ion-col>
+        <ion-col style="text-align:right;">
+          <ion-item>
+            <ion-label position="stacked">Nombre<ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input required type="text"   [(ngModel)]="nombreTextValue" name="nombre"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="1"></ion-col>
+      </ion-row>
+      <ion-row style="margin: 10px;">
+        <ion-col size="3" style="text-align:right;">
+          <h5>Deuda cliente</h5>
+        </ion-col>
+        <ion-col style="text-align:right;">
+          <ion-item>
+            <ion-label position="stacked">Deuda <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input required type="number"   [(ngModel)]="deudaTextValue" name="deuda"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="1"></ion-col>
+      </ion-row>
+      <ion-row style="margin: 10px;">
+        <ion-col size="1">
+        </ion-col>
+        <ion-col>
+          
+            <ion-button (click)="onSubmit()" color="primary" expand="block">Añadir</ion-button>
+          
+        </ion-col>
+        <ion-col size="1"></ion-col>
+      </ion-row>
+    </ion-grid>
+  
+</ion-content>

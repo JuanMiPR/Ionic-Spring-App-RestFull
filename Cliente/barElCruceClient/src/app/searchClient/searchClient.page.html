@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Busque a un Cliente
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+  
+    <div id ="beforeSearch">
+      <ion-grid>
+        <ion-row style="margin: 10px;">
+          <ion-col size="3" style="text-align:right;">
+            <h5>Dni del cliente</h5>
+          </ion-col>
+          <ion-col style="text-align:right;">
+            <ion-item>
+              <ion-label position="stacked">DNI <ion-text color="danger">*</ion-text>
+              </ion-label>
+              <ion-input required type="text" [(ngModel)]="dniTextValue" name="dni"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="1"></ion-col>
+        </ion-row>
+        <ion-row style="margin: 10px;">
+            <ion-col size="1">
+            </ion-col>
+            <ion-col>
+                <ion-button (click)="onSubmit()" color="primary" expand="block">Mostrar los datos</ion-button>
+            </ion-col>
+            <ion-col size="1"></ion-col>
+          </ion-row>
+      </ion-grid>
+    </div>
+    <div style="display: none;" id = "searchInfo">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title style="font-weight: bold;">Datos del cliente</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+      <ion-card>
+        <ion-card-content>
+            <p>Dni del Cliente :{{dniText}} </p>
+            <p>Nombre del cliente :{{nombreText}} </p>
+            <p>Deuda del cliente : {{deudaText}}</p>
+        </ion-card-content>
+        <ion-button (click)="searchOther()" color="primary" expand="block">Consulte otro cleinte</ion-button>
+      </ion-card>
+    </div>
+  
+  </ion-content>
